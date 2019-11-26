@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>사소한 씨의 이것저것</title>
+    <description></description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>DataTables에서 [object object] warning을 띄울 때</title>
+        <description>
+          
+          DataTables에는 ajax 옵션이 있어서 데이터를 json 형태로 외부로부터 받아올 수 있다. 그런데, 데이터도 멀쩡하고, 연결된 컬럼 설정도 멀쩡한데도 이런 에러가 튀어나올 때가 있다. DataTables warning: table id=token-table - [object Object] DataTables의 ajax 옵션 코드를 보면 json 데이터에 error 혹은 sError 엘리먼트가 있으면 에러 로그를 보여주게 되어 있다. // jquery.dataTables.js 중에서...
+        </description>
+        <pubDate>Tue, 26 Nov 2019 11:50:00 +0900</pubDate>
+        <link>http://localhost:4000/2019/11/26/datatables-object-object-warning/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/11/26/datatables-object-object-warning/</guid>
+      </item>
+    
+      <item>
+        <title>Jekyll을 Docker로 실행</title>
+        <description>
+          
+          결론부터 말하자면 Jekyll 테마가 설치된 블로그 폴더 안에서 다음의 명령어로 Docker에서 Jekyll을 띄울 수 있다. docker run --name myblog --volume=&quot;$PWD:/srv/jekyll&quot; -p 4000:4000 -it jekyll/jekyll jekyll serve 이후부터는 잡담. Github에서 Jekyll로 블로그를 만들어 글을 쓴다면, 크게 3가지 운영 방식이 있을 것 같다. 그냥 Github에서 바로 md 파일을 추가해서 포스팅. 일단 로컬에...
+        </description>
+        <pubDate>Sun, 24 Nov 2019 16:50:00 +0900</pubDate>
+        <link>http://localhost:4000/2019/11/24/jekyll-with-docker/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/11/24/jekyll-with-docker/</guid>
+      </item>
+    
+      <item>
+        <title>Jekyll 포스트에서 timezone 문제</title>
+        <description>
+          
+          포스트 파일을 추가해도 블로그에 나오지 않으면 포스트의 date 항목의 날짜값 뒤에 표준시를 적어주면 된다.
+
+한국을 예로 들면 UTC+09:00 이므로 +0900을 붙이면 된다.
+
+---
+layout: post
+title: 포스팅 제목 제목
+date: 2019-11-24 14:29:11 +0900
+---
+
+
+        </description>
+        <pubDate>Sun, 24 Nov 2019 14:29:11 +0900</pubDate>
+        <link>http://localhost:4000/2019/11/24/jekyll-post-timezone/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/11/24/jekyll-post-timezone/</guid>
+      </item>
+    
+      <item>
+        <title>테스트 겸 첫 포스팅</title>
+        <description>
+          
+          이제야 지킬을 써 보다니…
+
+
+  
+    
+      no
+      contents
+    
+  
+  
+    
+      1
+      그냥 테스트
+    
+  
+
+
+
+        </description>
+        <pubDate>Sat, 23 Nov 2019 17:19:15 +0900</pubDate>
+        <link>http://localhost:4000/2019/11/23/first-post/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/11/23/first-post/</guid>
+      </item>
+    
+  </channel>
+</rss>
