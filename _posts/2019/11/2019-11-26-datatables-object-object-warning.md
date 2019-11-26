@@ -2,6 +2,10 @@
 layout: post
 title: DataTables에서 [object object] warning을 띄울 때
 date: 2019-11-26 11:50:00 +0900
+tags:
+- datatables
+- warning
+- error
 ---
 [DataTables](https://datatables.net/)에는 [ajax](https://datatables.net/reference/option/ajax) 옵션이 있어서 데이터를 json 형태로 외부로부터 받아올 수 있다.
 
