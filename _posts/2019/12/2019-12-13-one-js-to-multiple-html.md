@@ -83,6 +83,9 @@ UTIL = {
     UTIL.fire('common','finalize');
   }
 };
+
+// kick it all off here 
+$(document).ready(UTIL.loadEvents);
 ```
 
 페이지를 실행하면 다음과 같이 찍힐 것이다.
