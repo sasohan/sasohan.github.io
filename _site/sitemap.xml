@@ -17,6 +17,14 @@
 <lastmod>2019-11-26T11:50:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2019/12/13/one-js-to-multiple-html/</loc>
+<lastmod>2019-12-13T16:55:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2021/08/26/reverse-proxy-nginx-413-error/</loc>
+<lastmod>2021-08-26T14:53:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/aboutme/</loc>
 </url>
 <url>
@@ -24,5 +32,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/tags/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page2/</loc>
 </url>
 </urlset>

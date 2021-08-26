@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
+	/>
+
+	<title>
+		여러 페이지에 하나의 자바스크립트를 쓰는 방법론 - 돔 기반 라우팅 - 사소한 씨의 이것저것
+	</title>
+
+	<meta name="author" content="sasohan" />
+
+	
+
+	<link
+		rel="alternate"
+		type="application/rss+xml"
+		title="사소한 씨의 이것저것"
+		href="http://localhost:4000/feed.xml"
+	/>
+
+	
+ 
+ 
+   
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" />
+
+    
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	
+	<link rel="stylesheet" href="/css/bootstrap-social.css" />
+	
+	<link rel="stylesheet" href="/css/main.css" />
+	   
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+	
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+	    
+
+	<link
+		href="//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-full.css"
+		rel="stylesheet"
+	/>
+
+	<!-- Facebook OpenGraph tags -->
+	 
+	<meta property="og:title" content="여러 페이지에 하나의 자바스크립트를 쓰는 방법론 - 돔 기반 라우팅" />
+	 
+	<meta
+		property="og:description"
+		content="gulp나 webpack 등을 이용해 여러 파일로 만들어진 자바스크립트를 하나로 모으는 대신, 처음부터 자바스크립트를 1개만 만들고, 여러 페이지에서 그 자바스크립트 1개만 호출하는 방식으로 관리한다면 어떨까. 돔 기반 라우팅(DOM-based Routing) 이 적절할 수 있다. 2009년에 작성된 글이지만 이제 여러 곳에서 유사한 방식이 쓰이고 있다. 링크는 영어이니, 내 식대로 간단하게 써보면 아래와 같다...."
+	/>
+	
+
+	<meta property="og:type" content="website" />
+
+	
+	<meta property="og:url" content="http://localhost:4000/2019/12/13/one-js-to-multiple-html/" />
+	<link rel="canonical" href="http://localhost:4000/2019/12/13/one-js-to-multiple-html/" />
+	 
+
+	<!-- Twitter summary cards -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@" />
+	<meta name="twitter:creator" content="@" />
+
+	
+	<meta name="twitter:title" content="여러 페이지에 하나의 자바스크립트를 쓰는 방법론 - 돔 기반 라우팅" />
+	 
+	<meta
+		name="twitter:description"
+		content="gulp나 webpack 등을 이용해 여러 파일로 만들어진 자바스크립트를 하나로 모으는 대신, 처음부터 자바스크립트를 1개만 만들고, 여러 페이지에서 그 자바스크립트 1개만 호출하는 방식으로 관리한다면 어떨까. 돔 기반 라우팅(DOM-based Routing) 이 적절할 수 있다. 2009년에 작성된 글이지만 이제 여러 곳에서 유사한 방식이 쓰이고 있다. 링크는 영어이니, 내 식대로 간단하게 써보면 아래와 같다...."
+	/>
+	   
+</head>
+
+
+  <body>
+
+    
+
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button><a class="navbar-brand" href="http://localhost:4000/">사소한 씨의 이것저것</a></div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="/aboutme">About Me</a></li></ul>
+    </div>
+
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>여러 페이지에 하나의 자바스크립트를 쓰는 방법론 - 돔 기반 라우팅</h1>
+		  
+		  
+		  
+		  <span class="post-meta">Posted on December 13, 2019</span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      
+
+      <article role="main" class="blog-post">
+        <p><code class="highlighter-rouge">gulp</code>나 <code class="highlighter-rouge">webpack</code> 등을 이용해 여러 파일로 만들어진 자바스크립트를 하나로 모으는 대신, 처음부터 자바스크립트를 1개만 만들고, 여러 페이지에서 그 자바스크립트 1개만 호출하는 방식으로 관리한다면 어떨까.</p>
+
+<p><a href="https://www.paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/"><strong>돔 기반 라우팅(DOM-based Routing)</strong></a> 이 적절할 수 있다. 2009년에 작성된 글이지만 이제 여러 곳에서 유사한 방식이 쓰이고 있다.</p>
+
+<p>링크는 영어이니, 내 식대로 간단하게 써보면 아래와 같다.</p>
+
+<hr />
+
+<p>일단 <code class="highlighter-rouge">body</code> 태그에 콘트롤러와 액션이 정의됐다고 하자.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body</span> <span class="na">data-controller=</span><span class="s">"forum"</span> <span class="na">data-action=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>그리고 액션이 실행되는 순서가 이렇다고 해보자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 공통 모듈의 init()
+- 해당 콘트롤러의 init()
+- 해당 콘트롤러의 action()
+- 공통 모듈의 finalize()
+</code></pre></div></div>
+
+<p>그럼, 그에 맞게 이런 오브젝트를 작성할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">MyNS</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">common</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">init</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'in common/init'</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">finalize</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'in common/finalize'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="na">forum</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">init</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'in forum/init'</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">list</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'in forum/list'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이제 <code class="highlighter-rouge">body</code>에 선언한 콘트롤러와 액션을 오브젝트로 구현을 했는데, 이걸 자동으로 실행하는 코드가 필요하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">UTIL</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">fire</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span><span class="nx">func_name</span><span class="p">,</span> <span class="nx">args</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">namespace</span> <span class="o">=</span> <span class="nx">MyNS</span><span class="p">;</span>  <span class="c1">// indicate your obj literal namespace here</span>
+
+    <span class="nx">func_name</span> <span class="o">=</span> <span class="p">(</span><span class="nx">func_name</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'init'</span> <span class="p">:</span> <span class="nx">func_name</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">func</span> <span class="o">!==</span> <span class="s1">''</span> <span class="o">&amp;&amp;</span> <span class="nx">namespace</span><span class="p">[</span><span class="nx">func</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">namespace</span><span class="p">[</span><span class="nx">func</span><span class="p">][</span><span class="nx">func_name</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'function'</span><span class="p">){</span>
+      <span class="nx">namespace</span><span class="p">[</span><span class="nx">func</span><span class="p">][</span><span class="nx">func_name</span><span class="p">](</span><span class="nx">args</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">},</span> 
+
+  <span class="na">loadEvents</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// hit up common first.</span>
+    <span class="nx">UTIL</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="s1">'common'</span><span class="p">);</span>
+
+    <span class="c1">// run controller's action</span>
+    <span class="kd">let</span> <span class="nx">controller</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">controller</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">action</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">action</span><span class="p">;</span>
+
+    <span class="nx">UTIL</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="nx">controller</span><span class="p">);</span> <span class="c1">// controller's init()</span>
+    <span class="nx">UTIL</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="nx">controller</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span> <span class="c1">// controller's action()</span>
+
+    <span class="c1">// hit up common's finalize.</span>
+    <span class="nx">UTIL</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="s1">'common'</span><span class="p">,</span><span class="s1">'finalize'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// kick it all off here </span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="nx">UTIL</span><span class="p">.</span><span class="nx">loadEvents</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>페이지를 실행하면 다음과 같이 찍힐 것이다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>in common/init
+in forum/init
+in forum/list
+in common/finalize
+</code></pre></div></div>
+
+<p>페이지 수에 따라 코드가 엄청나게 길어질 수도 있지만, 해당 콘트롤러와 액션에 찾아가는 방법도 비교적 쉽고, 명확하기 때문에, 크지 않은 프로젝트라면 처음부터 이런 구조로 작성하면 괜찮을 수도 있을 듯.</p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          Tags:
+          
+          
+            <a href="/tags#javascript">javascript</a>
+          
+            <a href="/tags#paul-irish">paul-irish</a>
+          
+            <a href="/tags#dom">dom</a>
+          
+            <a href="/tags#routing">routing</a>
+          
+          
+        </div>
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+  <!--- Share on Twitter -->
+    <a href="https://twitter.com/intent/tweet?text=%EC%97%AC%EB%9F%AC+%ED%8E%98%EC%9D%B4%EC%A7%80%EC%97%90+%ED%95%98%EB%82%98%EC%9D%98+%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A5%BC+%EC%93%B0%EB%8A%94+%EB%B0%A9%EB%B2%95%EB%A1%A0+-+%EB%8F%94+%EA%B8%B0%EB%B0%98+%EB%9D%BC%EC%9A%B0%ED%8C%85&url=http%3A%2F%2Flocalhost%3A4000%2F2019%2F12%2F13%2Fone-js-to-multiple-html%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+  <!--- Share on Facebook -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2019%2F12%2F13%2Fone-js-to-multiple-html%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+  <!--- Share on LinkedIn -->
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2019%2F12%2F13%2Fone-js-to-multiple-html%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="/2019/11/26/datatables-object-object-warning/" data-toggle="tooltip" data-placement="top" title="DataTables에서 [object object] warning을 띄울 때">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="/2021/08/26/reverse-proxy-nginx-413-error/" data-toggle="tooltip" data-placement="top" title="nginx를 reverse proxy로 이용할 때 413 에러 이유, 해결 방법">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+        <div class="disqus-comments">
+          <div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'sasohan';
+        /* ensure that pages with query string get the same discussion */
+            var url_parts = window.location.href.split("?");
+            var disqus_url = url_parts[0];
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        </div>
+          
+        <div class="staticman-comments">
+          
+
+        </div>
+        <div class="justcomments-comments">
+          
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links"><li><a href="/feed.xml" title="RSS"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">RSS</span>
+              </a>
+            </li></ul>
+      <p class="copyright text-muted">
+      sasohan
+      &nbsp;&bull;&nbsp;
+      2021
+
+      
+
+      
+      </p>
+          <!-- Please don't remove this, keep my open source work credited :) -->
+    <p class="theme-by text-muted">
+      Theme by
+      <a href="https://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+    </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+          document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/js/main.js"></script>
+    
+  
+
+
+
+
+
+
+  
+  </body>
+</html>

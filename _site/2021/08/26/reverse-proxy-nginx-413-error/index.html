@@ -10,7 +10,7 @@
 	/>
 
 	<title>
-		Jekyll 포스트에서 timezone 문제 - 사소한 씨의 이것저것
+		nginx를 reverse proxy로 이용할 때 413 에러 이유, 해결 방법 - 사소한 씨의 이것저것
 	</title>
 
 	<meta name="author" content="sasohan" />
@@ -49,29 +49,19 @@
 
 	<!-- Facebook OpenGraph tags -->
 	 
-	<meta property="og:title" content="Jekyll 포스트에서 timezone 문제" />
+	<meta property="og:title" content="nginx를 reverse proxy로 이용할 때 413 에러 이유, 해결 방법" />
 	 
 	<meta
 		property="og:description"
-		content="포스트 파일을 추가해도 블로그에 나오지 않으면 포스트의 date 항목의 날짜값 뒤에 표준시를 적어주면 된다.
-
-한국을 예로 들면 UTC+09:00 이므로 +0900을 붙이면 된다.
-
----
-layout: post
-title: 포스팅 제목 제목
-date: 2019-11-24 14:29:11 +0900
----
-
-"
+		content="웹 서버스 설정에 reverse proxy를 붙일 때 nginx를 많이 사용한다. 예를 들어 기본 웹 서버가 HTTP 통신만 가능해 SSL을 얹을 때 기능도 많고 무료인 Let's Encrypt를 많이들 사용한다. 이 때 기존의 웹 서버에 바로 Let's Encrypt를 적용하는 게 아니라 웹 서버 앞에 reverse proxy 역할을 하는 nginx를 하나 붙이고, 거기에..."
 	/>
 	
 
 	<meta property="og:type" content="website" />
 
 	
-	<meta property="og:url" content="http://localhost:4000/2019/11/24/jekyll-post-timezone/" />
-	<link rel="canonical" href="http://localhost:4000/2019/11/24/jekyll-post-timezone/" />
+	<meta property="og:url" content="http://localhost:4000/2021/08/26/reverse-proxy-nginx-413-error/" />
+	<link rel="canonical" href="http://localhost:4000/2021/08/26/reverse-proxy-nginx-413-error/" />
 	 
 
 	<!-- Twitter summary cards -->
@@ -80,21 +70,11 @@ date: 2019-11-24 14:29:11 +0900
 	<meta name="twitter:creator" content="@" />
 
 	
-	<meta name="twitter:title" content="Jekyll 포스트에서 timezone 문제" />
+	<meta name="twitter:title" content="nginx를 reverse proxy로 이용할 때 413 에러 이유, 해결 방법" />
 	 
 	<meta
 		name="twitter:description"
-		content="포스트 파일을 추가해도 블로그에 나오지 않으면 포스트의 date 항목의 날짜값 뒤에 표준시를 적어주면 된다.
-
-한국을 예로 들면 UTC+09:00 이므로 +0900을 붙이면 된다.
-
----
-layout: post
-title: 포스팅 제목 제목
-date: 2019-11-24 14:29:11 +0900
----
-
-"
+		content="웹 서버스 설정에 reverse proxy를 붙일 때 nginx를 많이 사용한다. 예를 들어 기본 웹 서버가 HTTP 통신만 가능해 SSL을 얹을 때 기능도 많고 무료인 Let's Encrypt를 많이들 사용한다. 이 때 기존의 웹 서버에 바로 Let's Encrypt를 적용하는 게 아니라 웹 서버 앞에 reverse proxy 역할을 하는 nginx를 하나 붙이고, 거기에..."
 	/>
 	   
 </head>
@@ -139,11 +119,11 @@ date: 2019-11-24 14:29:11 +0900
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-heading">
-          <h1>Jekyll 포스트에서 timezone 문제</h1>
+          <h1>nginx를 reverse proxy로 이용할 때 413 에러 이유, 해결 방법</h1>
 		  
 		  
 		  
-		  <span class="post-meta">Posted on November 24, 2019</span>
+		  <span class="post-meta">Posted on August 26, 2021</span>
 		  
         </div>
       </div>
@@ -163,16 +143,21 @@ date: 2019-11-24 14:29:11 +0900
       
 
       <article role="main" class="blog-post">
-        <p>포스트 파일을 추가해도 블로그에 나오지 않으면 포스트의 date 항목의 날짜값 뒤에 표준시를 적어주면 된다.</p>
+        <p>웹 서버스 설정에 <code class="highlighter-rouge">reverse proxy</code>를 붙일 때 <code class="highlighter-rouge">nginx</code>를 많이 사용한다.</p>
 
-<p>한국을 예로 들면 UTC+09:00 이므로 +0900을 붙이면 된다.</p>
+<p>예를 들어 기본 웹 서버가 <code class="highlighter-rouge">HTTP</code> 통신만 가능해 <code class="highlighter-rouge">SSL</code>을 얹을 때 기능도 많고 무료인 <a href="https://letsencrypt.org/"><code class="highlighter-rouge">Let's Encrypt</code></a>를 많이들 사용한다. 이 때 기존의 웹 서버에 바로 <code class="highlighter-rouge">Let's Encrypt</code>를 적용하는 게 아니라 웹 서버 앞에 <code class="highlighter-rouge">reverse proxy</code> 역할을 하는 <code class="highlighter-rouge">nginx</code>를 하나 붙이고, 거기에 <code class="highlighter-rouge">Let's Encrypt</code>를 설정하는 게 좋다.</p>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s">포스팅 제목 제목</span>
-<span class="na">date</span><span class="pi">:</span> <span class="s">2019-11-24 14:29:11 +0900</span>
-<span class="nn">---</span>
+<p>이렇게 하면 원래 의도한 서버 구조를 수정할 필요 없이 외부의 연결을 받아주는 <code class="highlighter-rouge">nginx(reverse proxy)</code>에 <code class="highlighter-rouge">SSL</code>을 얹어 <code class="highlighter-rouge">https</code> 연결을 확보할 수 있기 때문이다.</p>
+
+<p>이렇게 서버를 이렇게 구성했을 때, 파일을 업로드하면 보통 <code class="highlighter-rouge">413 Request Entity Too Large</code>가 발생한다. 왜냐면 <code class="highlighter-rouge">nginx</code>는 기본적으로 <code class="highlighter-rouge">client_max_body_size</code>가 <code class="highlighter-rouge">1MB</code>로 설정이 되어 있기 때문이다.</p>
+
+<p>이 때 <code class="highlighter-rouge">reverse proxy</code> 역할을 하는 <code class="highlighter-rouge">nginx</code>의 설정에 해당 값을 늘려주면 된다.</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># nginx의 conf 파일 (예: /etc/nginx/conf.d/max_body.conf) 에 다음의 내용을 추가
+</span><span class="n">client_max_body_size</span> <span class="m">16</span><span class="n">MB</span>;
 </code></pre></div></div>
+
+<p>참고로 기존 서버 구조가 <code class="highlighter-rouge">docker</code>를 쓰는 환경일 때, <code class="highlighter-rouge">reverse proxy</code>로 많이 사용하는 게 <a href="https://hub.docker.com/r/jwilder/nginx-proxy"><code class="highlighter-rouge">jwilder/nginx-proxy</code></a>이다. <code class="highlighter-rouge">jwilder/nginx-proxy</code>도 역시 <code class="highlighter-rouge">client_max_body_size</code>는 <code class="highlighter-rouge">1MB</code>로 되어 있다.</p>
 
       </article>
 
@@ -181,9 +166,17 @@ date: 2019-11-24 14:29:11 +0900
           Tags:
           
           
-            <a href="/tags#jekyll">jekyll</a>
+            <a href="/tags#nginx">nginx</a>
           
-            <a href="/tags#timezone">timezone</a>
+            <a href="/tags#Let's Encrypt">Let's Encrypt</a>
+          
+            <a href="/tags#reverse proxy">reverse proxy</a>
+          
+            <a href="/tags#413">413</a>
+          
+            <a href="/tags#docker">docker</a>
+          
+            <a href="/tags#docker-compose">docker-compose</a>
           
           
         </div>
@@ -200,7 +193,7 @@ date: 2019-11-24 14:29:11 +0900
 
   
   <!--- Share on Twitter -->
-    <a href="https://twitter.com/intent/tweet?text=Jekyll+%ED%8F%AC%EC%8A%A4%ED%8A%B8%EC%97%90%EC%84%9C+timezone+%EB%AC%B8%EC%A0%9C&url=http%3A%2F%2Flocalhost%3A4000%2F2019%2F11%2F24%2Fjekyll-post-timezone%2F"
+    <a href="https://twitter.com/intent/tweet?text=nginx%EB%A5%BC+reverse+proxy%EB%A1%9C+%EC%9D%B4%EC%9A%A9%ED%95%A0+%EB%95%8C+413+%EC%97%90%EB%9F%AC+%EC%9D%B4%EC%9C%A0%2C+%ED%95%B4%EA%B2%B0+%EB%B0%A9%EB%B2%95&url=http%3A%2F%2Flocalhost%3A4000%2F2021%2F08%2F26%2Freverse-proxy-nginx-413-error%2F"
       class="btn btn-social-icon btn-twitter" title="Share on Twitter">
       <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
       <span class="sr-only">Twitter</span>
@@ -209,7 +202,7 @@ date: 2019-11-24 14:29:11 +0900
 
   
   <!--- Share on Facebook -->
-    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2019%2F11%2F24%2Fjekyll-post-timezone%2F"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2021%2F08%2F26%2Freverse-proxy-nginx-413-error%2F"
       class="btn btn-social-icon btn-facebook" title="Share on Facebook">
       <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
       <span class="sr-only">Facebook</span>
@@ -218,7 +211,7 @@ date: 2019-11-24 14:29:11 +0900
 
   
   <!--- Share on LinkedIn -->
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2019%2F11%2F24%2Fjekyll-post-timezone%2F"
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2021%2F08%2F26%2Freverse-proxy-nginx-413-error%2F"
       class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
       <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
       <span class="sr-only">LinkedIn</span>
@@ -234,13 +227,9 @@ date: 2019-11-24 14:29:11 +0900
       <ul class="pager blog-pager">
         
         <li class="previous">
-          <a href="/2019/11/23/first-post/" data-toggle="tooltip" data-placement="top" title="테스트 겸 첫 포스팅">&larr; Previous Post</a>
+          <a href="/2019/12/13/one-js-to-multiple-html/" data-toggle="tooltip" data-placement="top" title="여러 페이지에 하나의 자바스크립트를 쓰는 방법론 - 돔 기반 라우팅">&larr; Previous Post</a>
         </li>
         
-        
-        <li class="next">
-          <a href="/2019/11/24/jekyll-with-docker/" data-toggle="tooltip" data-placement="top" title="Jekyll을 Docker로 실행">Next Post &rarr;</a>
-        </li>
         
       </ul>
 
