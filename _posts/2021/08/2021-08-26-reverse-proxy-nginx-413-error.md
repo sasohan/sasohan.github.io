@@ -3,12 +3,12 @@ layout: post
 title: nginx를 reverse proxy로 이용할 때 413 에러 이유, 해결 방법
 date: 2021-08-26 14:53:00 +0900
 Tags:
-  - nginx
-  - Let's Encrypt
-  - reverse proxy
-  - 413
-  - docker
-  - docker-compose
+- nginx
+- Let's Encrypt
+- reverse proxy
+- 413
+- docker
+- docker-compose
 ---
 
 웹 서버스 설정에 `reverse proxy`를 붙일 때 `nginx`를 많이 사용한다.
