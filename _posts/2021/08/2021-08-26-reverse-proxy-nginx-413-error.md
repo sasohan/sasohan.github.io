@@ -13,7 +13,7 @@ Tags:
 
 웹 서버스 설정에 `reverse proxy`를 붙일 때 `nginx`를 많이 사용한다.
 
-예를 들어 기본 웹 서버가 `HTTP` 통신만 가능해 `SSL`을 얹을 때 기능도 많고 무료인 `Let's Encrypt SSL`을 많이들 사용한다. 이 때 기존의 웹 서버에 바로 `Let's Encrypt`를 적용하는 게 아니라 웹 서버 앞에 `reverse proxy` 역할을 하는 `nginx`를 하나 붙이고, 거기에 `Let's Encrypt`를 설정하는 게 좋다.
+예를 들어 기본 웹 서버가 `HTTP` 통신만 가능해 `SSL`을 얹을 때 기능도 많고 무료인 [`Let's Encrypt`](https://letsencrypt.org/)를 많이들 사용한다. 이 때 기존의 웹 서버에 바로 `Let's Encrypt`를 적용하는 게 아니라 웹 서버 앞에 `reverse proxy` 역할을 하는 `nginx`를 하나 붙이고, 거기에 `Let's Encrypt`를 설정하는 게 좋다.
 
 이렇게 하면 원래 의도한 서버 구조를 수정할 필요 없이 외부의 연결을 받아주는 `nginx(reverse proxy)`에 `SSL`을 얹어 `https` 연결을 확보할 수 있기 때문이다.
 
