@@ -59,3 +59,9 @@ $('#tableId').DataTable({
     type: 'GET',
     ...
 ```
+
+참고로 에러 메시지를 아예 안 뱉는 것보다 콘솔에 띄우는 게 낫다면 `none` 대신 `throw`를 사용하면 된다.
+
+```javascript
+$.fn.dataTable.ext.errMode = 'throw';
+```
