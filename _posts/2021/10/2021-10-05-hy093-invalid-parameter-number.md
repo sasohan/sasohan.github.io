@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PDO 사용할 때 SQLSTATE[HY093]: invalid parameter number 가 발생한다면
+title: "PDO 사용할 때 SQLSTATE[HY093]: invalid parameter number 가 발생한다면"
 date: 2021-10-05 20:45:00 +0900
 tags:
 - php
