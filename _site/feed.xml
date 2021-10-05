@@ -3,8 +3,8 @@
   <channel>
     <title>사소한 씨의 이것저것</title>
     <description></description>
-    <link>https://sasohan.github.io/</link>
-    <atom:link href="https://sasohan.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>PDO 사용할 때 SQLSTATE[HY093]: invalid parameter number 가 발생한다면</title>
@@ -13,8 +13,8 @@
           Fatal error: Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number 이 에러는 PDO의 쿼리에 사용되는 파라미터의 개수가 맞지 않은 경우 발생한다. 그런데 만약 별 에러가 없어보이는데 이런 에러가 발생한다면, ATTR_EMULATE_PREPARES 속성값 그리고 named parameter의 사용 방식과 관련이 있을 수 있다. 아래처럼 PDO의 ATTR_EMULATE_PREPARES 값을 false로 선언하면 같은 값을 가졌더라도 파라미터 수만큼 named...
         </description>
         <pubDate>Tue, 05 Oct 2021 20:45:00 +0900</pubDate>
-        <link>https://sasohan.github.io/2021/10/05/hy093-invalid-parameter-number/</link>
-        <guid isPermaLink="true">https://sasohan.github.io/2021/10/05/hy093-invalid-parameter-number/</guid>
+        <link>http://0.0.0.0:4000/2021/10/05/hy093-invalid-parameter-number/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2021/10/05/hy093-invalid-parameter-number/</guid>
       </item>
     
       <item>
@@ -24,8 +24,8 @@
           웹 서버스 설정에 reverse proxy를 붙일 때 nginx를 많이 사용한다. 예를 들어 기본 웹 서버가 HTTP 통신만 가능해 SSL을 얹을 때 기능도 많고 무료인 Let's Encrypt를 많이들 사용한다. 이 때 기존의 웹 서버에 바로 Let's Encrypt를 적용하는 게 아니라 웹 서버 앞에 reverse proxy 역할을 하는 nginx를 하나 붙이고, 거기에...
         </description>
         <pubDate>Thu, 26 Aug 2021 14:53:00 +0900</pubDate>
-        <link>https://sasohan.github.io/2021/08/26/reverse-proxy-nginx-413-error/</link>
-        <guid isPermaLink="true">https://sasohan.github.io/2021/08/26/reverse-proxy-nginx-413-error/</guid>
+        <link>http://0.0.0.0:4000/2021/08/26/reverse-proxy-nginx-413-error/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2021/08/26/reverse-proxy-nginx-413-error/</guid>
       </item>
     
       <item>
@@ -35,8 +35,8 @@
           gulp나 webpack 등을 이용해 여러 파일로 만들어진 자바스크립트를 하나로 모으는 대신, 처음부터 자바스크립트를 1개만 만들고, 여러 페이지에서 그 자바스크립트 1개만 호출하는 방식으로 관리한다면 어떨까. 돔 기반 라우팅(DOM-based Routing) 이 적절할 수 있다. 2009년에 작성된 글이지만 이제 여러 곳에서 유사한 방식이 쓰이고 있다. 링크는 영어이니, 내 식대로 간단하게 써보면 아래와 같다....
         </description>
         <pubDate>Fri, 13 Dec 2019 16:55:00 +0900</pubDate>
-        <link>https://sasohan.github.io/2019/12/13/one-js-to-multiple-html/</link>
-        <guid isPermaLink="true">https://sasohan.github.io/2019/12/13/one-js-to-multiple-html/</guid>
+        <link>http://0.0.0.0:4000/2019/12/13/one-js-to-multiple-html/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/13/one-js-to-multiple-html/</guid>
       </item>
     
       <item>
@@ -46,8 +46,8 @@
           DataTables에는 ajax 옵션이 있어서 데이터를 json 형태로 외부로부터 받아올 수 있다. 그런데, 데이터도 멀쩡하고, 연결된 컬럼 설정도 멀쩡한데도 이런 에러가 튀어나올 때가 있다. DataTables warning: table id=token-table - [object Object] DataTables의 ajax 옵션 코드를 보면 json 데이터에 error 혹은 sError 엘리먼트가 있으면 에러 로그를 보여주게 되어 있다. // jquery.dataTables.js 중에서...
         </description>
         <pubDate>Tue, 26 Nov 2019 11:50:00 +0900</pubDate>
-        <link>https://sasohan.github.io/2019/11/26/datatables-object-object-warning/</link>
-        <guid isPermaLink="true">https://sasohan.github.io/2019/11/26/datatables-object-object-warning/</guid>
+        <link>http://0.0.0.0:4000/2019/11/26/datatables-object-object-warning/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2019/11/26/datatables-object-object-warning/</guid>
       </item>
     
       <item>
@@ -57,8 +57,8 @@
           결론부터 말하자면 Jekyll 테마가 설치된 블로그 폴더 안에서 다음의 명령어로 Docker에서 Jekyll을 띄울 수 있다. docker run --name myblog --volume=&quot;$PWD:/srv/jekyll&quot; -p 4000:4000 -it jekyll/jekyll jekyll serve 이후부터는 잡담. Github에서 Jekyll로 블로그를 만들어 글을 쓴다면, 크게 3가지 운영 방식이 있을 것 같다. 그냥 Github에서 바로 md 파일을 추가해서 포스팅. 일단 로컬에...
         </description>
         <pubDate>Sun, 24 Nov 2019 16:50:00 +0900</pubDate>
-        <link>https://sasohan.github.io/2019/11/24/jekyll-with-docker/</link>
-        <guid isPermaLink="true">https://sasohan.github.io/2019/11/24/jekyll-with-docker/</guid>
+        <link>http://0.0.0.0:4000/2019/11/24/jekyll-with-docker/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2019/11/24/jekyll-with-docker/</guid>
       </item>
     
       <item>
@@ -78,8 +78,8 @@ date: 2019-11-24 14:29:11 +0900
 
         </description>
         <pubDate>Sun, 24 Nov 2019 14:29:11 +0900</pubDate>
-        <link>https://sasohan.github.io/2019/11/24/jekyll-post-timezone/</link>
-        <guid isPermaLink="true">https://sasohan.github.io/2019/11/24/jekyll-post-timezone/</guid>
+        <link>http://0.0.0.0:4000/2019/11/24/jekyll-post-timezone/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2019/11/24/jekyll-post-timezone/</guid>
       </item>
     
       <item>
@@ -106,8 +106,8 @@ date: 2019-11-24 14:29:11 +0900
 
         </description>
         <pubDate>Sat, 23 Nov 2019 17:19:15 +0900</pubDate>
-        <link>https://sasohan.github.io/2019/11/23/first-post/</link>
-        <guid isPermaLink="true">https://sasohan.github.io/2019/11/23/first-post/</guid>
+        <link>http://0.0.0.0:4000/2019/11/23/first-post/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2019/11/23/first-post/</guid>
       </item>
     
   </channel>
