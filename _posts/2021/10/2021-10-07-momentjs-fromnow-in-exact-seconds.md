@@ -1,7 +1,7 @@
 ---
 layout: post
 title: moment.js의 fromNow()에서 초 단위까지 정확하게 카운팅하려면
-date: 2021-10-05 20:45:00 +0900
+date: 2021-10-07 16:30:00 +0900
 tags:
 - moment.js
 - fromNow
