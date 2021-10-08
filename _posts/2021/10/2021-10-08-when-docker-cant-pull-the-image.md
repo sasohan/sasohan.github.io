@@ -1,7 +1,7 @@
 ---
 layout: post
 title: docker가 image pull에 실패할 때 (connection refused)
-date: 2021-10-07 16:30:00 +0900
+date: 2021-10-08 23:15:00 +0900
 tags:
 - docker
 - connection
