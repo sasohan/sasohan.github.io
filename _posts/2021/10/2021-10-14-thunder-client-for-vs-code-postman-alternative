@@ -16,7 +16,7 @@ VS Code의 익스텐션으로 api를 테스트하는 [Thunder Client](https://ww
 
 Postman을 써 본 사람이라면 다들 알 것 같은 Collection, Env 기능도 동일하게 존재한다.
 
-물론 지금의 Postman은 목업 서버 기능, 모니터링 기능과 함께 협업 시스템도 지원을 하고, 최근에는 플로우(flow)라는 기능도 실험적으로 지원하며 점점 서비스 수준을 올려가는 게 사실이다.
+물론 지금의 Postman은 목업 서버 기능, 모니터링 기능과 함께 협업 시스템도 지원을 하고, 최근에는 [플로우(flow)](https://community.postman.com/t/user-feedback-postman-flows/28121/3)라는 기능도 실험적으로 지원하며 점점 서비스 수준을 올려가는 게 사실이다.
 
 하지만 혼자 개발하면서, api 테스트를 위해 VS Code와 Postman을 번갈아가면서 확인했던 개발자라면 이제 VS Code만 열고 작업을 할 수 있을 듯.
 
