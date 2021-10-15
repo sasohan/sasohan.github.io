@@ -16,7 +16,7 @@ ligature란 두 개 이상의 문자가 합쳐져서 하나의 글자 모양이 
 
 방법은 간단한데, Settings에 가서 ligature를 지원하는 폰트를 `Editor: Font Familiy`에 적용하면 된다.
 
-만약 이때, ligature 기능이 작동하지 않으면 VS Code의 세팅값이 저장된 `settings.json` 파일을 열어 다음과 같이 `editor.fontLigatures` 항목을 추가해주면 된다. (당연히 `editor.FontFamily`에는 ligature를 지원하는 폰트가 선언되어야 한다.)
+만약 이때, ligature 기능이 작동하지 않으면 VS Code의 세팅값이 저장된 `settings.json` 파일을 열어 다음과 같이 `editor.fontLigatures` 항목을 추가해주면 된다.
 
 ```json
 {
