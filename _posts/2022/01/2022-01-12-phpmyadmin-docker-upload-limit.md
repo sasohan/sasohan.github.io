@@ -10,7 +10,7 @@ tags:
   - environment variable
 ---
 
-`phpmyadmin`의 공식 도커 이미지인 [`phpmyadmin/phpmyadmin`](https://hub.docker.com/r/phpmyadmin/phpmyadmin/)을 이용해서 도커 인스턴스를 띄워서 사용할 때, 업로드 파일 크기 제한은 기본적으로 `2MB`로 되어 있다.
+`phpmyadmin`의 공식 도커 이미지인 [phpmyadmin/phpmyadmin](https://hub.docker.com/r/phpmyadmin/phpmyadmin/)을 이용해서 도커 인스턴스를 띄워서 사용할 때, 업로드 파일 크기 제한은 기본적으로 `2MB`로 되어 있다.
 
 이를 늘리려면 환경 변수(`environment variables`) `UPLOAD_LIMIT`을 이용하면 된다.
 
