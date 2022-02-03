@@ -13,7 +13,7 @@ tags:
 - 소스: [stedolan/jq](https://github.com/stedolan/jq)
 - 공식 홈페이지: [jq](https://stedolan.github.io/jq/)
 
-공식 홈페이지에서 [OS별로 다운로드](https://stedolan.github.io/jq/download/)를 받을 수 있다. (리눅스, 맥OS, 윈도우, FreeBSD, 솔라리스)
+공식 홈페이지에서 [OS별로 다운로드](https://stedolan.github.io/jq/download/)를 받을 수 있다. (리눅스, 맥OS, 윈도우, FreeBSD, 솔라리스) (맥에서는 `brew install jq`로 하면 쉽다)
 
 사용법도 쉬운데, 기본적으로 JSON 데이터에 파이프를 연결해서 사용한다.
 
