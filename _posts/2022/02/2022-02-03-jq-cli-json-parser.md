@@ -17,7 +17,7 @@ tags:
 
 사용법도 쉬운데, 기본적으로 JSON 데이터에 파이프를 연결해서 사용한다.
 
-예를 들어 https://www.githubstatus.com/api/v2/status.json 의 결과는 다음과 같다.
+예를 들어 [https://www.githubstatus.com/api/v2/status.json](https://www.githubstatus.com/api/v2/status.json)의 결과는 다음과 같다.
 
 ```json
 {
@@ -43,4 +43,4 @@ curl "https://www.githubstatus.com/api/v2/status.json" | jq '.page.url'
 
 이렇게 파싱해서 원하는 프로퍼티만 뽑을 수도 있고, 반복되는 데이터에서 특정한 프로퍼티만 확인할 수도 있다.
 
-- jq 튜토리얼 - https://stedolan.github.io/jq/tutorial/
+- jq 튜토리얼: [https://stedolan.github.io/jq/tutorial/](https://stedolan.github.io/jq/tutorial/)
