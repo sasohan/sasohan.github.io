@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CLI에서 작동하는 JSON 프로세서(파서): jq
+title: jq - CLI에서 작동하는 JSON 프로세서(파서)
 date: 2022-02-03 11:50:00 +0900
 tags:
   - cli
