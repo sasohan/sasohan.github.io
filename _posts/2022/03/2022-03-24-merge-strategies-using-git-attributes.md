@@ -1,7 +1,7 @@
 ---
 layout: post
 title: merge할 때 특정 파일을 제외하는 방법
-date: 2022-02-03 11:55:00 +0900
+date: 2022-03-24 16:00:00 +0900
 tags:
   - git
   - merge
